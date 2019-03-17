@@ -28,12 +28,15 @@ export default class App extends Component<Props> {
           source={Logo}
           style={styles.image}
           />
-        <Button
-          title="Get Started"
-          style={styles.button}
-          onPress={() => this.onPress()}
-          color="#fff"
-        />
+          <View style={styles.buttonContainer}>
+            <Button
+              title="Get Started"
+              style={styles.button}
+              onPress={() => this.onPress()}
+              color="#fff"
+            />
+          </View>
+        
       </View>
     );
   }
@@ -61,5 +64,10 @@ const styles = StyleSheet.create({
     height: 260,
     justifyContent: 'center',
   },
-
+  buttonContainer: {
+    backgroundColor: '#008F68',
+    borderRadius: 5,
+    padding: 5,
+    margin: 15
+  },
 });
