@@ -7,7 +7,8 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image, Button} from 'react-native';
+import Logo from './assets/Logo.jpeg'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -21,9 +22,18 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Text style={styles.h1}>Health App</Text>
+        <Text style={styles.h2}>Visually see how your health is in sync.</Text>
+        <Image 
+          source={Logo}
+          style={styles.image}
+          />
+        <Button
+          title="Get Started"
+          style={styles.button}
+          onPress={() => this.onPress()}
+          color="#fff"
+        />
       </View>
     );
   }
@@ -32,18 +42,24 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: '#000',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    width: '100%',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  h1: {
+    color: '#008F68',
+    fontSize: 30,
+    marginTop: 30,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  h2: {
+    color: '#FAE042',
+    fontSize: 18,
   },
+  image: {
+    width: 300,
+    height: 260,
+    justifyContent: 'center',
+  },
+
 });
